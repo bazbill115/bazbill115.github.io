@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to Customize your Zsh Terminal - Hello, world! I'm Brandon Azbill</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Hello, world! I'm Brandon Azbill" property="og:site_name">
+  
+    <meta content="How to Customize your Zsh Terminal" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes." property="og:description">
+  
+  
+    <meta content="http://localhost:4000/how-to-customize-your-zsh-terminal/" property="og:url">
+  
+  
+    <meta content="2020-06-02T00:00:00-04:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/terminal.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="Productivity" property="article:tag">
+    
+    <meta content="Learning" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="How to Customize your Zsh Terminal">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/how-to-customize-your-zsh-terminal/">
+  
+  
+    <meta name="twitter:description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/terminal.png">
+  
+
+	<meta name="description" content="You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/brandon-azbill.png" alt="Brandon Azbill"></a>
+      </div>
+      <div class="author-name">Brandon Azbill</div>
+      <p></p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        <!-- 
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/bazbill115" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/brandonazbill" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:bazbill115@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2020 &copy; Brandon Azbill</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/terminal.png alt="How to Customize your Zsh Terminal">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How to Customize your Zsh Terminal</h1>
+        <div class="page-date"><span>2020, Jun 02&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p><a href="https://www.livefire.solutions">VMware’s Cloud Service Livefire Team</a> has started delivering their class using an Ubuntu Desktop via Horizon 7. The console of the desktop has been customized to optimize the attendee experience for the various Kubernetes related labs they will work through. I thought it would be a good idea to provide guidance for creating a similar console experience for MacOS users since Catalina has started using ZSH as its default shell.
+In this article, we will be working through a variety of installations and configurations needed to create a more functional, and visually compelling terminal as seen above using iTerm2, Oh My Zsh, and PowerLevel10k.</p>
+
+<h2 id="install-homebrew">Install Homebrew</h2>
+<p>To begin, we will be installing the package manager Homebrew, which is predominantly used on MacOS (or Linux).</p>
+
+<ol>
+  <li>Navigate to the site https://brew.sh/</li>
+  <li>Copy the code snippet provided on the page, and paste that into your preferred terminal and press <strong>Return</strong>. In this instance, we will be using the native Terminal application that is installed on MacOS. Enter your password when prompted.</li>
+</ol>
+
+<p><img src="/assets/img/homebrew.png" alt="Homebrew screenshot" /></p>
+
+<p>Once installed, type the command <code class="language-plaintext highlighter-rouge">brew --version</code> to verify that Homebrew has been successfully installed.</p>
+
+<p><img src="/assets/img/brew-version.png" alt="Brew-version" /></p>
+
+<h2 id="install-relevant-fonts-and-iterm2">Install Relevant Fonts and iTerm2</h2>
+<p>Now with Homebrew installed, we will be using the package manager to install custom fonts as well as iTerm2, which will be used as a replacement for the default terminal installed.  iTerm2 offers a variety of features including split panes, autocomplete, and shell integration, among many more features. The custom font we will be using for iTerm2 is the hack-nerd-font.</p>
+
+<ol>
+  <li>In your terminal, enter the command: <code class="language-plaintext highlighter-rouge">brew tap homebrew/cask-fonts</code>.<br />
+<img src="/assets/img/brew-caskfonts.png" alt="Brew-caskfonts" /></li>
+  <li>In your terminal, enter the command: <code class="language-plaintext highlighter-rouge">brew cask install font-hack-nerd-font iterm2</code>.<br />
+<img src="/assets/img/brew-iterm2.png" alt="Brew-iterm2" /></li>
+</ol>
+
+<h2 id="install-more-terminal-tools">Install More Terminal Tools</h2>
+<p>In this section, we will be installing a few terminal tools to help enhance your terminal experience:</p>
+
+<ul>
+  <li><strong>FZF</strong>:  Helps you search lists and open files quickly in your terminal using the “fzf” command</li>
+  <li><strong>Tree</strong>: Lists out directories in a tree format recursively</li>
+  <li><strong>SSHFS (Secure Shell FileSystem)</strong>: Allows for remote filesystems to be accessed securely over SSH</li>
+  <li><strong>JQ</strong>: A command-line JSON processor similar to sed/grep</li>
+  <li><strong>zsh-syntax-highlighting</strong>: Adds syntax highlighting for zsh</li>
+</ul>
+
+<ol>
+  <li>In your terminal, enter the command: <code class="language-plaintext highlighter-rouge">brew cask install osxfuse</code> and enter your password when prompted. This is needed in order to install sshfs.<br />
+<img src="/assets/img/brew-osxfuse.png" alt="Brew-osxfuse" /></li>
+  <li>In your terminal, enter the command: <code class="language-plaintext highlighter-rouge">brew install fzf tree sshfs jq zsh-syntax-highlighting</code> to install all of the commands.<br />
+<img src="/assets/img/brew-addons.png" alt="Brew-addons" /></li>
+  <li>In order to enable fuzzy auto-completion and enable keybindings, run the following command: <code class="language-plaintext highlighter-rouge">/usr/local/opt/fzf/install</code> and press Y when prompted.<br />
+<img src="/assets/img/fuzzy-auto.png" alt="Fuzzy-auto" /></li>
+  <li>In order to have fzf capabilities in Vim, add the following line to your .vimrc file using the command: <code class="language-plaintext highlighter-rouge">echo -n "set rtp+=/usr/local/opt/fzf" &gt;&gt; .vimrc</code>.  This will append the line into an existing .vimrc file located in your current directory, or will create one if there is not one present. Run cat .vimrc to verify ZSH that it was successfully added to the file.<br />
+<img src="/assets/img/cat-vimrc.png" alt="cat-vimrc" /></li>
+</ol>
+
+<h2 id="installing-oh-my-zsh">Installing Oh My Zsh</h2>
+<p>Oh My Zsh is a community-driven framework that manages your Zsh configuration, and has a wide selection of functions, plugins and themes to enhance your terminal’s functionality and appearance.</p>
+
+<ol>
+  <li>In order to install Oh My Zsh, run the following command: <code class="language-plaintext highlighter-rouge">sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code>. Take note of the insecure completion-dependent directories, and hit <strong>Control+D</strong> to return to your shell.<br />
+<img src="/assets/img/curl-zsh.png" alt="curl-zsh" /></li>
+  <li>To address these insecure completion-dependent directories, modify the permissions w/ the two following commands: <code class="language-plaintext highlighter-rouge">chmod 700 /usr/local/share/zsh</code> and <code class="language-plaintext highlighter-rouge">chmod 700 /usr/local/share/zsh/site-functions</code>.</li>
+</ol>
+
+<h2 id="installing-powerlevel10k">Installing Powerlevel10k</h2>
+<p>Powerlevel10k is a Zsh theme with a builtin configuration wizard to help customize your terminal.</p>
+
+<ol>
+  <li>To install PowerLevel10k, run the following command: <code class="language-plaintext highlighter-rouge">brew install romkatv/powerlevel10k/powerlevel10k</code>.</li>
+  <li>In order to activate powerlevel10k, run the following command to add the necessary line to the .zshrc file (make sure it is in the directory you are currently in): <code class="language-plaintext highlighter-rouge">echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' &gt;&gt;! ~/.zshrc</code>.</li>
+  <li>In order to enable the zsh syntax highlighting that was previously installed, run the following command to add it to the .zshrc file: <code class="language-plaintext highlighter-rouge">echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' &gt;&gt;! ~/.zshrc</code>.</li>
+  <li>Verify that Step 2 and Step 3 worked by checking the .zshrc file: <code class="language-plaintext highlighter-rouge">cat ~/.zshrc</code>.<br />
+<img src="/assets/img/zshrc-verify.png" alt="zshrc-verify" /></li>
+</ol>
+
+<h2 id="add-colorls-to-zshell">Add ColorLS to zShell</h2>
+<p>ColorLS is a tool that can be used as a replacement of “ls” to have color and icons. In this case, we will be setting the alias to lc such that you can run lc to get the colorized version of it.</p>
+
+<ol>
+  <li>First, install ColorLS with the following command: <code class="language-plaintext highlighter-rouge">sudo gem install colorls</code> and enter your password when prompted.</li>
+  <li>For Zsh to use ColorLS, add it to your .zshrc file with the following command: <code class="language-plaintext highlighter-rouge">echo "alias lc='colorls --sd'" &gt;&gt; ~/.zshrc</code>.<br />
+<img src="/assets/img/colorls.png" alt="colorls" /></li>
+</ol>
+
+<h2 id="shell-integration-with-iterm2">Shell Integration with iTerm2</h2>
+<p>Shell integration allows for the tracking of command history, current working directory, and more over ssh.</p>
+
+<ol>
+  <li>To add shell integration to iTerm2, run the following command: <code class="language-plaintext highlighter-rouge">curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh| bash</code>.<br />
+<img src="/assets/img/shell-integration.png" alt="shell-integration" /></li>
+</ol>
+
+<h2 id="dynamic-profile-with-iterm2">Dynamic Profile with iTerm2</h2>
+<p>Dynamic Profiles is a feature of iTerm2 that will allow you to specify a profile outside of the default macOS preferences.</p>
+
+<ol>
+  <li>Create the directory for the dynamic profile with the following command: <code class="language-plaintext highlighter-rouge">mkdir -p ~/Library/ApplicationSupport/iTerm2/DynamicProfiles</code>.</li>
+  <li>Next, run the following command to add the dynamic profile configuration into the override.json file that will be located in the recently created DynamicProfiles folder: <code class="language-plaintext highlighter-rouge">cat &gt; ~/Library/ApplicationSupport/iTerm2/DynamicProfiles/override.json &lt;&lt; "EOF"</code>. Once that is entered, enter the following details to set the name, guid, non ascii font, and normal font. In this case, we will be using MeslosLGS-NF-Regular 13:  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+ </span><span class="nl">"Profiles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+ </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Override"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"Guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A7AB362C-4D81-44BA-B615-6759D0212691"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"Non Ascii Font"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"MesloLGS-NF-Regular 13"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"Normal Font"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"MesloLGS-NF-Regular 13"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="err">EOF</span></code></pre></figure>
+
+<p><img src="/assets/img/dynamic-profile.png" alt="dynamic-profile" /></p>
+
+<h2 id="customizing-iterm2">Customizing iTerm2</h2>
+<p>In this section, we will be changing the preferences of iTerm2 and working through the Powerlevel10k configuration wizard to complete the customization of your new terminal.</p>
+
+<ol>
+  <li>Open up iTerm2 and go to Preference.</li>
+  <li>Go to the Profiles tab, and select the Text tab.</li>
+  <li>From here, click the font option to the Hack Nerd Font.<br />
+<img src="/assets/img/iterm-pref.png" alt="iterm-pref" /></li>
+  <li>Return to the iTerm2 terminal, and run the command: <code class="language-plaintext highlighter-rouge">p10k configure</code>. Install any needed fonts, and continue with the prompt shown below.  A sample terminal from one of the configurations is shown below.<br />
+<img src="/assets/img/p10k-config.png" alt="p10k-config" /></li>
+</ol>
+
+<p>Depending on the choices you make throughout the setup completed above, your terminal can result in looking like the following:
+<img src="/assets/img/sample-terminal.png" alt="sample-terminal" /></p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How to Customize your Zsh Terminal&url=http://localhost:4000/how-to-customize-your-zsh-terminal/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/how-to-customize-your-zsh-terminal/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/how-to-customize-your-zsh-terminal/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#Productivity" class="tag">&#35; Productivity</a>
+          
+            <a href="/tags#Learning" class="tag">&#35; Learning</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
