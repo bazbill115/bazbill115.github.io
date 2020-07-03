@@ -9,7 +9,9 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Brandon Azbill # add your name
 author-img: brandon-azbill.png # add your photo
-about-author:  # add description
+about-author: B.S. Computer Science |
+  UVA 2021  |
+  CKA/CKAD Certifications # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: bazbill115 # add your Github handle

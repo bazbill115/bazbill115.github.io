@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Hello, world! I'm Brandon Azbill</title>
+	<title>Brandon Azbill's Blog</title>
 
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
 
-    <meta content="Hello, world! I'm Brandon Azbill" property="og:site_name">
+    <meta content="Brandon Azbill's Blog" property="og:site_name">
   
-    <meta content="Hello, world! I'm Brandon Azbill" property="og:title">
+    <meta content="Brandon Azbill's Blog" property="og:title">
   
   
     <meta content="website" property="og:type">
   
   
-    <meta content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <meta content="Check out my blog!
 " property="og:description">
   
   
@@ -31,13 +31,13 @@
     <meta name="twitter:site" content="@">
     <meta name="twitter:creator" content="@">
   
-    <meta name="twitter:title" content="Hello, world! I'm Brandon Azbill">
+    <meta name="twitter:title" content="Brandon Azbill's Blog">
   
   
     <meta name="twitter:url" content="http://localhost:4000/">
   
   
-    <meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <meta name="twitter:description" content="Check out my blog!
 ">
   
   
@@ -71,12 +71,21 @@
   <div class="wrapper">
     <aside class="sidebar">
   <header>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171047511-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171047511-1');
+</script>
     <div class="about">
       <div class="cover-author-image">
         <a href="/"><img src="/assets/img/brandon-azbill.png" alt="Brandon Azbill"></a>
       </div>
       <div class="author-name">Brandon Azbill</div>
-      <p></p>
+      <p>B.S. Computer Science | UVA 2021  | CKA/CKAD Certifications</p>
     </div>
   </header> <!-- End Header -->
   <footer>
@@ -107,6 +116,18 @@
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix">
   
+<article class="post">
+  
+    <a class="post-thumbnail" style="background-image: url(/assets/img/Livefire-Logo-1.png)" href="/internship-update-2020/"></a>
+  
+  <div class="post-content">
+    <h2 class="post-title"><a href="/internship-update-2020/">Livefire Solutions Internship Update 2020</a></h2>
+    <p>Hello everyone, as it has been a little over a month since I have started...</p>
+    <span class="post-date">2020, Jul 03&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+    <span class="post-words">2 minute read</span>
+  </div>
+</article>
+
 <article class="post">
   
     <a class="post-thumbnail" style="background-image: url(/assets/img/terminal.png)" href="/how-to-customize-your-zsh-terminal/"></a>
@@ -142,7 +163,7 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '', 'auto');
+  ga('create', 'bazbill115', 'auto');
   ga('send', 'pageview');
 </script> <!-- End Analytics -->
 

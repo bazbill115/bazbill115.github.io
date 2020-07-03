@@ -2,7 +2,7 @@
 layout: post
 title: How to Customize your Zsh Terminal
 date: 2020-06-02
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+description: Brief tutorial to customize your Zsh terminal. # Add post description (optional)
 img: terminal.png # Add image post (optional)
 tags: [Productivity, Learning] # add tag
 ---
@@ -106,5 +106,5 @@ In this section, we will be changing the preferences of iTerm2 and working throu
 4. Return to the iTerm2 terminal, and run the command: `p10k configure`. Install any needed fonts, and continue with the prompt shown below.  A sample terminal from one of the configurations is shown below.  
 ![p10k-config]({{site.baseurl}}/assets/img/p10k-config.png)  
 
-Depending on the choices you make throughout the setup completed above, your terminal can result in looking like the following:
+Depending on the choices you make throughout the setup completed above, your terminal can result in looking like the following:  
 ![sample-terminal]({{site.baseurl}}/assets/img/sample-terminal.png)  
