@@ -4,6 +4,7 @@ title: Livefire Solutions Internship Update 2020
 date: 2020-07-03
 description: A little update about my experiences with my current internship with VMware.
 img: Livefire-Logo-1.png
+thumbnail: Livefire-Logo-1.png
 tags: [Work, Learning] # add tag
 ---
 

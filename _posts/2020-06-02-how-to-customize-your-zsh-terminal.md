@@ -4,6 +4,7 @@ title: How to Customize your Zsh Terminal
 date: 2020-06-02
 description: Brief tutorial to customize your Zsh terminal. # Add post description (optional)
 img: terminal.png # Add image post (optional)
+thumbnail: terminal.png
 tags: [Productivity, Learning] # add tag
 ---
 [VMware's Cloud Service Livefire Team](https://www.livefire.solutions) has started delivering their class using an Ubuntu Desktop via Horizon 7. The console of the desktop has been customized to optimize the attendee experience for the various Kubernetes related labs they will work through. I thought it would be a good idea to provide guidance for creating a similar console experience for MacOS users since Catalina has started using ZSH as its default shell.
