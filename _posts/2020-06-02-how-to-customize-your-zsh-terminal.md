@@ -39,7 +39,7 @@ In this section, we will be installing a few terminal tools to help enhance your
 - **JQ**: A command-line JSON processor similar to sed/grep
 - **zsh-syntax-highlighting**: Adds syntax highlighting for zsh
 
-1. In your terminal, enter the command: `brew cask install osxfuse` and enter your password when prompted. This is needed in order to install sshfs.  
+1. In your terminal, enter the command: `brew cask install osxfuse` and enter your password if prompted. This is needed in order to install sshfs.  
 ![Brew-osxfuse]({{site.baseurl}}/assets/img/brew-osxfuse.png)  
 2. In your terminal, enter the command: `brew install fzf tree sshfs jq zsh-syntax-highlighting` to install all of the commands.  
 ![Brew-addons]({{site.baseurl}}/assets/img/brew-addons.png)  
@@ -74,7 +74,7 @@ ColorLS is a tool that can be used as a replacement of "ls" to have color and ic
 ## Shell Integration with iTerm2
 Shell integration allows for the tracking of command history, current working directory, and more over ssh.
 
-1.	To add shell integration to iTerm2, run the following command: `curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh| bash`.  
+1.	To add shell integration to iTerm2, run the following command: `curl -L "https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh" | bash`.  
 ![shell-integration]({{site.baseurl}}/assets/img/shell-integration.png)  
 
 ## Dynamic Profile with iTerm2
