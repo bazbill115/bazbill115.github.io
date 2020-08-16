@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tanzu Mission Control CLI Guide - Brandon Azbill's Blog</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Brandon Azbill's Blog" property="og:site_name">
+  
+    <meta content="Tanzu Mission Control CLI Guide" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="A little tutorial on using the TMC CLI to create clusters, sign in, etc." property="og:description">
+  
+  
+    <meta content="http://localhost:4000/tmc-cli-guide/" property="og:url">
+  
+  
+    <meta content="2020-07-30T00:00:00-04:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/vm-tanzu.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="Work" property="article:tag">
+    
+    <meta content="Learning" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Tanzu Mission Control CLI Guide">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/tmc-cli-guide/">
+  
+  
+    <meta name="twitter:description" content="A little tutorial on using the TMC CLI to create clusters, sign in, etc.">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/vm-tanzu.png">
+  
+
+	<meta name="description" content="A little tutorial on using the TMC CLI to create clusters, sign in, etc.">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171047511-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171047511-1');
+</script>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/brandon-azbill.png" alt="Brandon Azbill"></a>
+      </div>
+      <div class="author-name">Brandon Azbill</div>
+      <p>B.S. Computer Science <br> UVA 2021 <br></p>
+      <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="9e8dc433-c5d4-4d47-8ee5-259e1b554708" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
+      <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="70774684-7221-44ff-8695-c3951c8561f6" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        <!-- 
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/bazbill115" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/brandonazbill" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:bazbill115@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2020 &copy; Brandon Azbill</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/vm-tanzu.png alt="Tanzu Mission Control CLI Guide">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Tanzu Mission Control CLI Guide</h1>
+        <div class="page-date"><span>2020, Jul 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>Hello everyone, in this post, I will be going over some of the CLI capabilities for Tanzu Mission Control.</p>
+
+<p>To begin, in order to get the CLI onto your system you will need to navigate to Tanzu Mission Control and click on the Automation Center tab.  From there, you can download the CLI onto your local system.  You will then want to follow the steps to initialize the CLI as defined in the screenshot below.  This will require you to create an api-token under your user settings.</p>
+
+<p><img src="/assets/img/tmc-cli-download.png" alt="tmc-cli-download" /></p>
+
+<p>Once you are logged in by running the command <code class="language-plaintext highlighter-rouge">tmc login</code> in your terminal, you can verify which TMC contexts you have on your system, as well as your current context with the following commands: <code class="language-plaintext highlighter-rouge">tmc system context list</code> and <code class="language-plaintext highlighter-rouge">tmc system context current</code>.  The first command lists the contexts you have logged into, and the second one shows you which one is your current one.</p>
+
+<p><img src="/assets/img/tmc-system-context-list.png" alt="tmc-system-context-list" /></p>
+
+<h2 id="creating-managed-namespaces-clusters-clustergroups-and-workspaces">Creating Managed Namespaces, Clusters, Clustergroups, and Workspaces</h2>
+
+<p>To create a clustergroup using the CLI, run the following command:<br />
+<code class="language-plaintext highlighter-rouge">tmc clustergroup create -n &lt;clustergroup name&gt; -d "Insert description here"</code></p>
+
+<p><img src="/assets/img/tmc-cli-cg.png" alt="tmc-cli-cg" /></p>
+
+<p>As seen below, the clustergroup is visible on the TMC GUI.</p>
+
+<p><img src="/assets/img/tmc-cli-cg-gui.png" alt="tmc-cli-cg-gui" /></p>
+
+<p>To create a workspace, run a similar command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">tmc workspace create --name &lt;workspace name&gt;</code></p>
+
+<p>To create a managed namespace, run the command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">tmc cluster namespace create -c &lt;cluster name&gt; -n &lt;namespace name&gt; -k &lt;workspace name&gt; -d "Insert description here"</code></p>
+
+<p>To create a cluster, run the command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">tmc cluster create -n &lt;name&gt; -c &lt;account name credential&gt; -s "" -g &lt;clustergroup&gt;</code></p>
+
+<h3 id="wizard">Wizard</h3>
+<p>The wizard makes it very easy to create a cluster or managed namespace using the CLI (note these two objects take in the most required inputs from the objects covered in this section.) As seen in the screenshot, it will go through the required inputs and show all available options for each input.</p>
+<ul>
+  <li>Using wizard for a cluster: <code class="language-plaintext highlighter-rouge">tmc cluster create -w</code></li>
+  <li>Using wizard for a managed namespace: <code class="language-plaintext highlighter-rouge">tmc cluster namespace create -w</code></li>
+</ul>
+
+<p><img src="/assets/img/tmc-cluster-wiz.png" alt="tmc-cluster-wiz" /></p>
+
+<h2 id="advanced-queries">Advanced Queries</h2>
+
+<p>The TMC CLI has powerful capabilities that can help get these necessary inputs to fully automate the setup/cleanup of a multi-cluster (multi-cloud) environment.  I believe that if you have extra interest in this automation, it would be worth some time to see the output JSON values from various tmc commands (most list/get commands using TMC, with an added <code class="language-plaintext highlighter-rouge">-o json</code> to get the output returned in a JSON format). From there, you can use various jq commands to query the information that you would need to know.  A sample query can be found below, that lists all the available regions by name, and Kubernetes version available on that region.  You can also view the entirety of the json and see other important fields, such as sshKeyName, instanceType and zoneName.</p>
+
+<p><code class="language-plaintext highlighter-rouge">tmc cluster options list &lt;account name credential&gt; -o json | jq -r '.regionalOptions[] | .regionName, .versionList[].name, ""'  </code></p>
+
+<p>A sample output of this query can be found in the screenshot below:</p>
+
+<p><img src="/assets/img/tmc-jq-capability.png" alt="tmc-jq-capability" /></p>
+
+<p>Note: If you are still new to using jq, I suggest practicing through using a site such as <a href="https://jqplay.org">jqplay.org</a> to get a feel for how you can quickly get the information you need from large json files.</p>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Tanzu Mission Control CLI Guide&url=http://localhost:4000/tmc-cli-guide/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/tmc-cli-guide/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <!-- <a href="https://plus.google.com/share?url=http://localhost:4000/tmc-cli-guide/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a> -->
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#Work" class="tag">&#35; Work</a>
+          
+            <a href="/tags#Learning" class="tag">&#35; Learning</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//bazbill115.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'bazbill115', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
